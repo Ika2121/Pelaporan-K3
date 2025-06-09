@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pelaporan K3</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      background: #f9f9f9;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #1e2a38;
+      color: white;
+      padding: 20px;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 10px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #1abc9c;
+      color: white;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 40px;
+      overflow-y: auto;
+    }
+
+    .profile-card {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #1abc9c;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .profile-card h1 {
+      font-size: 28px;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    .profile-card h2 {
+      font-size: 18px;
+      color: #7f8c8d;
+      font-weight: normal;
+    }
+
+    .content-section {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .content-section h3 {
+      margin-top: 0;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+    }
+
+    .content-section h3 i {
+      margin-right: 10px;
+      color: #1abc9c;
+    }
+
+    .biodata-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+      font-size: 16px;
+      color: #34495e;
+    }
+
+    @media (max-width: 768px) {
+      .biodata-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#" onclick="tampilkan('tentang')"><i class="fas fa-user"></i> Biodata</a></li>
+      <li><a href="#" onclick="tampilkan('kontak')"><i class="fas fa-phone"></i> Pengaduhan Pelanggaran</a></li>
+      <li><a href="#" onclick="tampilkan('pengaduhan')"><i class="fas fa-exclamation-triangle"></i> Pengaduhan Kecelakaan</a></li>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="profile-card">
+      <img src="images/profil.jpg" alt="Foto Diri" class="profile-img" />
+      <h1>PT Kaya Monyet</h1>
+    </div>
+
+    <div id="tentang" class="content-section">
+      <h3><i class="fas fa-id-card"></i> Tentang Saya</h3>
+      <div class="biodata-grid">
+        <div><strong>Nama:</strong> Mariatul Ulfa</div>
+        <div><strong>Jabatan:</strong> Supervisor</div>
+        <div><strong>Usia:</strong> 21 tahun</div>
+        <div><strong>Jenis Kelamin:</strong> Perempuan</div>
+        <div><strong>Alamat:</strong> Jl. Menganti, Laban, Menganti, Gresik</div>
+        <div><strong>No Darurat:</strong> +62 857-7192-6096</div>
+      </div>
+    </div>
+
+    <div id="kontak" class="content-section" style="display: none;">
+      <h3><i class="fas fa-address-book"></i> Pengaduhan Pelanggaran</h3>
+      <p>Klik di sini untuk melakukan <a href="https://forms.gle/vD2r1JFt2MpQ1igdA" target="_blank">Pengaduhan Pelanggaran</a>.</p>
+      <p>Costumer Service: +62 819 1772 8962</p>
+    </div>
+
+    <div id="pengaduhan" class="content-section" style="display: none;">
+      <h3><i class="fas fa-flag"></i> Pengaduhan Kecelakaan</h3>
+      <p>Klik di sini untuk melakukan <a href="https://forms.gle/wGKVGcjzULgXwdBw9" target="_blank">Pengaduhan Kecelakaan</a>.</p>
+      <p>Costumer Service: +62 819 1772 8962</p>
+    </div>
+  </div>
+
+  <script>
+    function tampilkan(id) {
+      document.getElementById("tentang").style.display = "none";
+      document.getElementById("kontak").style.display = "none";
+      document.getElementById("pengaduhan").style.display = "none";
+      document.getElementById(id).style.display = "block";
+    }
+  </script>
+</body>
+
+</html>
